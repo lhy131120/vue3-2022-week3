@@ -14,7 +14,7 @@ const app = {
     login() {
       axios.post(`${this.domain}/v2/admin/signin`, this.user)
         .then(res=>{
-          console.log(res.data);
+          // console.log(res.data);
           const { token, expired } = res.data;
           this.user.username = '';
           this.user.password = '';

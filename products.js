@@ -20,11 +20,11 @@ const vm = {
       axios
         .post(`${this.domain}/api/user/check`)
         .then((res) => {
-          console.log(res)
+          // console.log(res)
           this.getProducts()
         })
         .catch((err) => {
-          console.log(err)
+          alert(err.data.message)
           window.location = './login.html'
         })
     },
@@ -32,7 +32,7 @@ const vm = {
       axios
         .get(`${this.domain}/api/${this.api_path}/admin/products/all`)
         .then((res) => {
-          console.log(res.data)
+          // console.log(res.data)
           this.products = res.data.products
         })
         .catch((err) => {
@@ -52,12 +52,12 @@ const vm = {
 
       axios[method](url, { data: this.tempProduct })
         .then((res) => {
-          console.log(res.data.message)
+          alert(res.data.message)
           productModal.hide()
           this.getProducts()
         })
         .catch((err) => {
-          console.log(err.data.message)
+          alert(err.response.data.message);
         })
     },
     openModal(status, product) {
@@ -86,7 +86,7 @@ const vm = {
           delProductModal.hide()
         })
         .catch((err) => {
-          console.log(err.data.message)
+          alert(err.response.data.message);
         })
     },
     createImage() {

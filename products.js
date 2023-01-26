@@ -1,7 +1,7 @@
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.45/vue.esm-browser.min.js'
 
-let productModal = ''
-let delProductModal = ''
+let productModal = null;
+let delProductModal = null;
 
 const vm = {
   data() {
